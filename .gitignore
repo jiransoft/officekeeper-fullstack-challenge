@@ -1,0 +1,26 @@
+# Environment
+.env
+*.local
+
+# Dependencies
+/part-a-legacy/vendor/
+/part-a-legacy/system/
+/part-b-feature/vendor/
+/part-b-feature/node_modules/
+/part-d-bonus/vendor/
+/part-d-bonus/node_modules/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Docker
+mysql_data/

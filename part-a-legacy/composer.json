@@ -1,0 +1,19 @@
+{
+    "name": "dlp-console/legacy",
+    "description": "DLP 관리 콘솔 v1 (CodeIgniter 3 기반 레거시)",
+    "require": {
+        "php": ">=7.4",
+        "codeigniter/framework": "3.1.*"
+    },
+    "config": {
+        "vendor-dir": "vendor"
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "cp -r vendor/codeigniter/framework/system system"
+        ],
+        "post-update-cmd": [
+            "cp -r vendor/codeigniter/framework/system system"
+        ]
+    }
+}
