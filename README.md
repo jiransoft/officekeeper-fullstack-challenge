@@ -77,7 +77,7 @@ JIRA 티켓 형식의 기획서 [`docs/TICKET-DLP-1024.md`](docs/TICKET-DLP-1024
 - **Part D-1 (10%)**: Part B API 일부를 **Kotlin + Spring Boot**로 구현
 - **Part D-2 (10%)**: Part B 화면을 **React / Next.js**로 구현
 
-상세: [`part-d-bonus/README.md`](part-d-bonus/README.md)
+상세: [`part-d/README.md`](part-d/README.md)
 
 > 완벽한 구현보다 **기본기 확인**이 목적입니다. 핵심 기능이 동작하면 충분합니다.
 
@@ -177,7 +177,7 @@ A. 개수를 공개하지는 않습니다. 가능한 한 많이 찾아주세요.
 **Q. Part B 기획서에 모호한 부분이 있는데요?**
 A. 의도입니다. 본인이 합리적으로 판단하고 `DECISIONS.md`에 기록하세요. 정답은 없습니다.
 
-**Q. 4~6시간 안에 다 못 하면요?**
+**Q. 7~10시간 안에 다 못 하면요?**
 A. 부분 구현도 평가 대상입니다. 완성도보다 **코드 품질과 의사결정 과정**을 더 중요하게 봅니다.
 
 **Q. 커밋은 어떻게 하면 되나요?**

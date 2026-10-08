@@ -7,8 +7,8 @@
 /part-a-legacy/system/
 /part-b-feature/vendor/
 /part-b-feature/node_modules/
-/part-d-bonus/vendor/
-/part-d-bonus/node_modules/
+/part-d/vendor/
+/part-d/node_modules/
 
 # IDE
 .idea/
