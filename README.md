@@ -20,7 +20,7 @@
 
 | 항목 | 설명 |
 |------|------|
-| **권장 소요** | 4~6시간 |
+| **권장 소요** | 7~10시간 |
 | **작업 창** | 첫 커밋부터 **168시간(7일)** 이내 커밋만 평가 대상 |
 | **하드 마감** | 채용 담당자가 별도 안내 |
 | **창 밖 커밋** | 채점에서 제외됩니다 (README 정리·오탈자 포함) |
@@ -31,7 +31,7 @@
 
 ## 과제 구성
 
-### Part A — 레거시 유지보수 (필수, 30%)
+### Part A — 레거시 유지보수 (필수, 20%)
 
 `part-a-legacy/` 에 CodeIgniter 3 스타일로 작성된 **파일 반출 로그 조회** 화면이 있습니다.
 이 코드에는 **보안 취약점, 성능 문제, PHP 8 비호환 코드**가 의도적으로 포함되어 있습니다.
@@ -42,7 +42,7 @@
 
 **평가 관점**: 보안 감각, PHP 깊이, 코드 리딩 능력, 수정 근거의 명확성
 
-### Part B — 신규 기능 개발 (필수, 30%)
+### Part B — 신규 기능 개발 (필수, 20%)
 
 `part-b-feature/` 에 Laravel 스캐폴딩이 준비되어 있습니다.
 JIRA 티켓 형식의 기획서 [`docs/TICKET-DLP-1024.md`](docs/TICKET-DLP-1024.md)를 읽고 **파일 반출 승인 요청** 기능을 구현하세요.
@@ -60,7 +60,7 @@ JIRA 티켓 형식의 기획서 [`docs/TICKET-DLP-1024.md`](docs/TICKET-DLP-1024
 
 **평가 관점**: REST API 설계, Laravel 활용도, jQuery 구현, 의사결정 능력
 
-### Part C — Docker (필수, 15%)
+### Part C — Docker (필수, 10%)
 
 `docker compose up` **한 번**으로 전체 환경이 실행되도록 구성하세요.
 
@@ -70,14 +70,16 @@ JIRA 티켓 형식의 기획서 [`docs/TICKET-DLP-1024.md`](docs/TICKET-DLP-1024
 
 **평가 관점**: Docker 실행 여부(합/불 게이트), Dockerfile 품질, 환경 설정
 
-### Part D — 가산점 (선택, +α)
+### Part D — 5.0 전환 역량 (필수, 20%)
 
-Part A~C를 모두 완료한 후 여유가 있다면:
+오피스키퍼 5.0은 **Kotlin + React** 스택입니다. 두 가지 모두 구현하세요.
 
-- **옵션 1**: Part B API 일부를 **Kotlin + Spring Boot**로 구현
-- **옵션 2**: Part B 화면을 **React/Next.js**로 구현
+- **Part D-1 (10%)**: Part B API 일부를 **Kotlin + Spring Boot**로 구현
+- **Part D-2 (10%)**: Part B 화면을 **React / Next.js**로 구현
 
 상세: [`part-d-bonus/README.md`](part-d-bonus/README.md)
+
+> 완벽한 구현보다 **기본기 확인**이 목적입니다. 핵심 기능이 동작하면 충분합니다.
 
 ---
 
@@ -86,10 +88,10 @@ Part A~C를 모두 완료한 후 여유가 있다면:
 | 파일 | 내용 | 필수 |
 |------|------|:----:|
 | **Part A~C 코드** | 위 과제 구현 | O |
+| **Part D 코드** | Kotlin API + React 화면 | O |
 | **`FIXES.md`** | Part A 수정 내역 및 근거 | O |
 | **`DECISIONS.md`** | Part B 설계 결정 및 가정 | O |
 | **`AI_USAGE.md`** | AI 도구 사용 내역 | O |
-| Part D 코드 | 가산점 구현 | X |
 
 ---
 
@@ -97,12 +99,13 @@ Part A~C를 모두 완료한 후 여유가 있다면:
 
 | 영역 | 비중 | 주요 관점 |
 |------|-----:|----------|
-| **Part A: 레거시 유지보수** | 30% | 보안 취약점 식별, PHP 깊이, 성능 인식 |
-| **Part B: 신규 기능·API** | 30% | REST 설계, Laravel 활용, jQuery, 의사결정 |
-| **Part C: Docker** | 15% | `docker compose up` 실행 여부, 구성 품질 |
+| **Part A: 레거시 유지보수** | 20% | 보안 취약점 식별, PHP 깊이, 성능 인식 |
+| **Part B: 신규 기능·API** | 20% | REST 설계, Laravel 활용, jQuery, 의사결정 |
+| **Part C: Docker** | 10% | `docker compose up` 실행 여부, 구성 품질 |
+| **Part D-1: Kotlin API** | 10% | Kotlin 기본기, Spring Boot 구조 |
+| **Part D-2: React 화면** | 10% | React 컴포넌트, 상태 관리, API 연동 |
 | **협업 산출물** | 15% | DECISIONS.md, FIXES.md 품질 |
-| **AI 활용** | 10% | AI_USAGE.md, 효과적 활용과 검증 |
-| **Part D: 가산점** | +α | Kotlin/React 추가 역량 |
+| **AI 활용** | 15% | AI_USAGE.md, 효과적 활용과 검증 |
 
 ### 불합격 기준
 
