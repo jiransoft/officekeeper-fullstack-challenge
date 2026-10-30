@@ -1,0 +1,75 @@
+# ============================================================
+# DLP 관리 콘솔 — Docker Compose
+#
+# 사용법: docker compose up
+#
+# 이 파일은 스켈레톤입니다.
+# Part C 과제로, 지원자가 서비스 설정을 완성해야 합니다.
+# ============================================================
+
+services:
+  # ── MySQL ──────────────────────────────────────────────────
+  mysql:
+    image: mysql:8.0
+    container_name: dlp-mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD:-rootpassword}
+      MYSQL_DATABASE: ${DB_DATABASE:-dlp_console}
+      MYSQL_USER: ${DB_USERNAME:-dlp_user}
+      MYSQL_PASSWORD: ${DB_PASSWORD:-dlp_password}
+    ports:
+      - "${DB_PORT:-3306}:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./mysql/init.sql:/docker-entrypoint-initdb.d/01-init.sql:ro
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # ── Part A: 레거시 앱 (CodeIgniter 3) ──────────────────────
+  # TODO: 지원자가 아래 서비스 설정을 완성하세요.
+  # - Dockerfile 빌드 또는 이미지 지정
+  # - 환경 변수 설정 (DB 연결 등)
+  # - mysql 서비스 의존성
+  # - 포트 매핑
+  legacy-app:
+    build:
+      context: ./part-a-legacy
+      dockerfile: Dockerfile
+    container_name: dlp-legacy
+    restart: unless-stopped
+    # environment:
+    #   DB_HOST: mysql
+    #   DB_DATABASE: ${DB_DATABASE:-dlp_console}
+    #   DB_USERNAME: ${DB_USERNAME:-dlp_user}
+    #   DB_PASSWORD: ${DB_PASSWORD:-dlp_password}
+    # ports:
+    #   - "8080:80"
+    # depends_on:
+    #   mysql:
+    #     condition: service_healthy
+
+  # ── Part B: 신규 앱 (Laravel) ──────────────────────────────
+  # TODO: 지원자가 아래 서비스 설정을 완성하세요.
+  # laravel-app:
+  #   build:
+  #     context: ./part-b-feature
+  #     dockerfile: Dockerfile
+  #   container_name: dlp-laravel
+  #   restart: unless-stopped
+  #   environment:
+  #     DB_HOST: mysql
+  #     DB_DATABASE: ${DB_DATABASE:-dlp_console}
+  #     DB_USERNAME: ${DB_USERNAME:-dlp_user}
+  #     DB_PASSWORD: ${DB_PASSWORD:-dlp_password}
+  #   ports:
+  #     - "8000:80"
+  #   depends_on:
+  #     mysql:
+  #       condition: service_healthy
+
+volumes:
+  mysql_data:
